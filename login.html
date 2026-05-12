@@ -269,10 +269,11 @@
   <a href="index.html" class="back">← MAINO : THE LINE으로 돌아가기</a>
 
 <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-<script>
-  firebase.initializeApp({
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const app = initializeApp({
     apiKey: "AIzaSyCX5mXxSilNZVAGUv45hXOfxejN8W312cA",
     authDomain: "maino-the-line-shop.firebaseapp.com",
     projectId: "maino-the-line-shop",
@@ -280,7 +281,7 @@
     messagingSenderId: "993121019919",
     appId: "1:993121019919:web:1db226e2fa20d5f18d5b7a"
   });
-  const auth = firebase.auth();
+  const auth = getAuth(app);
 
   // 리다이렉트 결과 먼저 처리 후 상태 확인
   let redirectHandled = false;
@@ -316,7 +317,7 @@
     if (!email || !pw) { errEl.textContent = '이메일과 비밀번호를 입력해주세요.'; return; }
 
     try {
-      await auth.signInWithEmailAndPassword(email, pw);
+      await signInWithEmailAndPassword(auth, email, pw);
       window.location.href = 'index.html';
     } catch (e) {
       if (e.code === 'auth/user-not-found' || e.code === 'auth/wrong-password' || e.code === 'auth/invalid-credential')
@@ -341,7 +342,7 @@
     if (!pwValid.valid) { errEl.textContent = pwValid.msg; return; }
 
     try {
-      await auth.createUserWithEmailAndPassword(email, pw);
+      await createUserWithEmailAndPassword(auth, email, pw);
       window.location.href = 'index.html';
     } catch (e) {
       if (e.code === 'auth/email-already-in-use')
@@ -390,6 +391,13 @@
     numEl.className     = 'rule' + (numOk     ? ' pass' : '');
     specialEl.className = 'rule' + (specialOk ? ' pass' : '');
   }
+
+  // 전역 함수 등록
+  window.handleLogin = handleLogin;
+  window.handleSignup = handleSignup;
+  window.handleGoogle = handleGoogle;
+  window.switchTab = switchTab;
+  window.checkPwStrength = checkPwStrength;
 
   // 엔터키 지원
   document.addEventListener('keydown', e => {
