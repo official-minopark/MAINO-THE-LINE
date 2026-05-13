@@ -196,6 +196,19 @@
 
     /* 로딩 스피너 */
     .btn.loading { opacity: 0.6; pointer-events: none; }
+
+    /* ── 모바일 반응형 ── */
+    @media (max-width: 480px) {
+      body { padding: 32px 16px; }
+
+      .card { max-width: 100%; }
+
+      .input { padding: 12px 14px; font-size: 16px; /* iOS 줌 방지 */ }
+
+      .btn { padding: 14px; font-size: 15px; }
+
+      .logo { height: 20px; margin-bottom: 36px; }
+    }
   </style>
 </head>
 <body>

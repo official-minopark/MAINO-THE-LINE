@@ -575,6 +575,58 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* ── 모바일 반응형 ── */
+  @media (max-width: 768px) {
+    :root { --nav-height: 56px; }
+
+    nav { padding: 0 20px; }
+
+    .nav-dropdown-inner { padding: 12px 20px 20px; }
+
+    section {
+      padding: calc(var(--nav-height) + 48px) 20px 60px;
+    }
+
+    #intro { padding-top: var(--nav-height); }
+
+    .hero-inner { padding-top: 72px; }
+
+    .hero-title { font-size: clamp(36px, 10vw, 64px); }
+
+    .hero-desc { font-size: 16px; margin-bottom: 40px; }
+
+    .hero-brands { gap: 24px; }
+
+    .brand-inner { max-width: 100%; }
+
+    .brand-title { font-size: clamp(26px, 7vw, 40px); }
+
+    .brand-body { font-size: 16px; }
+
+    .sns-group { margin-bottom: 32px; }
+
+    .sns-item { padding: 14px 0; }
+
+    .contact-grid { grid-template-columns: 1fr; }
+
+    .contact-item { padding: 28px 20px; }
+
+    #goto { padding: 72px 20px; }
+
+    .goto-cards { grid-template-columns: 1fr; }
+
+    .goto-card { padding: 36px 24px; }
+
+    footer { padding: 32px 20px; }
+
+    .footer-inner { flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: clamp(28px, 9vw, 48px); }
+    .hero-brands { flex-direction: column; gap: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -834,3 +886,4 @@
 </script>
 </body>
 </html>
+<!-- 이 파일은 이미 </style> 태그 전에 추가해야 하므로 별도 처리 필요 -->
