@@ -373,12 +373,12 @@
       card.style.display = 'none';
       const notice = document.createElement('div');
       notice.style.cssText = 'text-align:center;max-width:400px;width:100%;';
-      notice.innerHTML = \`
+      notice.innerHTML = `
         <div style="font-size:48px;margin-bottom:20px;">📧</div>
         <h2 style="font-size:20px;font-weight:500;letter-spacing:-0.02em;color:#1d1d1f;margin-bottom:12px;">이메일을 확인해주세요</h2>
         <p style="font-size:14px;color:#6e6e73;line-height:1.7;margin-bottom:32px;">가입하신 이메일로 인증 링크를 보냈어요.<br>인증 후 로그인해주세요.</p>
         <button onclick="this.parentNode.remove();document.querySelector('.card').style.display='flex';window.switchTab('login');" style="background:#1d1d1f;color:#fff;border:none;padding:14px 32px;border-radius:980px;font-size:14px;cursor:pointer;font-family:inherit;">로그인하러 가기</button>
-      \`;
+      `;
       card.parentNode.insertBefore(notice, card.nextSibling);
       return;
     } catch (e) {
