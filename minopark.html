@@ -190,26 +190,6 @@
     }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
-<!-- Firebase Auth 체크 -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-  const app = initializeApp({
-    apiKey: "AIzaSyCX5mXxSilNZVAGUv45hXOfxejN8W312cA",
-    authDomain: "maino-the-line-shop.firebaseapp.com",
-    projectId: "maino-the-line-shop",
-    storageBucket: "maino-the-line-shop.firebasestorage.app",
-    messagingSenderId: "993121019919",
-    appId: "1:993121019919:web:1db226e2fa20d5f18d5b7a"
-  });
-  const auth = getAuth(app);
-
-  // 로그인 안 되어 있으면 login 페이지로
-  onAuthStateChanged(auth, user => {
-    if (!user) window.location.href = 'login.html';
-  });
-</script>
 </head>
 <body>
 
