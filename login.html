@@ -265,13 +265,14 @@
         Google로 계속하기
       </button>
     </div>
-    <!-- 이메일 인증 안내 (회원가입 완료 후) -->
-    <div id="verify-notice" style="display:none; text-align:center; padding: 20px 0;">
-      <div style="font-size:48px; margin-bottom:20px;">📧</div>
-      <h2 style="font-size:20px; font-weight:500; letter-spacing:-0.02em; color:#1d1d1f; margin-bottom:12px;">이메일을 확인해주세요</h2>
-      <p style="font-size:14px; color:#6e6e73; line-height:1.7; margin-bottom:32px;">가입하신 이메일로 인증 링크를 보냈어요.<br>인증 후 로그인해주세요.</p>
-      <button onclick="document.getElementById('verify-notice').style.display='none'; switchTab('login');" style="background:#1d1d1f; color:#fff; border:none; padding:14px 32px; border-radius:980px; font-size:14px; cursor:pointer; font-family:inherit;">로그인하러 가기</button>
-    </div>
+  </div>
+
+  <!-- 이메일 인증 안내 (회원가입 완료 후) — card 밖에 위치 -->
+  <div id="verify-notice" style="display:none; text-align:center; max-width:400px; width:100%;">
+    <div style="font-size:48px; margin-bottom:20px;">📧</div>
+    <h2 style="font-size:20px; font-weight:500; letter-spacing:-0.02em; color:#1d1d1f; margin-bottom:12px;">이메일을 확인해주세요</h2>
+    <p style="font-size:14px; color:#6e6e73; line-height:1.7; margin-bottom:32px;">가입하신 이메일로 인증 링크를 보냈어요.<br>인증 후 로그인해주세요.</p>
+    <button onclick="document.getElementById('verify-notice').style.display='none'; document.querySelector('.card').style.display='flex'; switchTab('login');" style="background:#1d1d1f; color:#fff; border:none; padding:14px 32px; border-radius:980px; font-size:14px; cursor:pointer; font-family:inherit;">로그인하러 가기</button>
   </div>
 
   <a href="index.html" class="back">← MAINO : THE LINE으로 돌아가기</a>
@@ -375,6 +376,7 @@
       await auth.signOut();
       // 회원가입 폼 숨기고 안내 메시지 표시
       document.getElementById('form-signup').style.display = 'none';
+      document.querySelector('.card').style.display = 'none';
       document.getElementById('verify-notice').style.display = 'block';
       return;
     } catch (e) {
