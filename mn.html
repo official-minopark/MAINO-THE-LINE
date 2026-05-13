@@ -242,6 +242,154 @@
       border-radius: 980px;
     }
 
+
+    /* ── 폰 목업 ── */
+    .phone-mockup-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 64px;
+    }
+    .phone-mockup {
+      width: 260px;
+      height: 530px;
+      background: #1a1a1a;
+      border-radius: 36px;
+      border: 2px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px #0a0a0a,
+        0 0 0 3px #222,
+        0 0 0 4px rgba(255,255,255,0.04),
+        0 40px 80px rgba(0,0,0,0.7),
+        0 0 60px rgba(0,214,143,0.06);
+    }
+    /* 삼성폰 펀치홀 카메라 */
+    .phone-notch {
+      width: 10px; height: 10px;
+      background: #1a1a1a;
+      border-radius: 50%;
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.5);
+    }
+    /* 삼성폰 사이드 버튼 */
+    .phone-mockup::before {
+      content: '';
+      position: absolute;
+      right: -3px; top: 100px;
+      width: 3px; height: 60px;
+      background: #333;
+      border-radius: 0 2px 2px 0;
+    }
+    .phone-mockup::after {
+      content: '';
+      position: absolute;
+      left: -3px; top: 80px;
+      width: 3px; height: 40px;
+      background: #333;
+      border-radius: 2px 0 0 2px;
+      box-shadow: 0 52px 0 #333;
+    }
+    .phone-screen {
+      width: 100%; height: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      border-radius: 34px;
+      overflow: hidden;
+    }
+    .app-body {
+      flex: 1;
+      padding: 36px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: #fff;
+      overflow: hidden;
+    }
+    .app-my-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 0 12px;
+    }
+    .app-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: #0D0D0D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .app-avatar.my { background: #0D0D0D; }
+    .app-avatar span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #00D68F;
+    }
+    .app-profile-info { flex: 1; min-width: 0; }
+    .app-profile-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #0D0D0D;
+      letter-spacing: -0.01em;
+    }
+    .app-profile-status {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .app-divider {
+      height: 1px;
+      background: #f0f0f0;
+      margin: 4px 0 8px;
+    }
+    .app-section-label {
+      font-size: 10px;
+      color: #bbb;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .app-friend {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0;
+    }
+    .app-bottom-bar {
+      height: 52px;
+      background: #fff;
+      border-top: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 8px 4px;
+    }
+    .app-tab-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+    }
+    .app-tab-item svg { stroke: #ccc; }
+    .app-tab-item.active svg { stroke: #0D0D0D; }
+    .phone-caption {
+      margin-top: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.04em;
+    }
+
     /* FOOTER */
     footer {
       border-top: 0.5px solid rgba(255,255,255,0.06);
@@ -304,7 +452,7 @@
     <span class="mint">더 쉬워지는 곳.</span>
   </h1>
   <p class="hero-sub">
-    MN Pay와 MN Talk으로<br>
+    MN으로<br>
     결제와 소통을 하나로 연결합니다.
   </p>
   <div class="hero-btns">
@@ -316,25 +464,114 @@
 <section class="services" id="services">
   <p class="section-tag fade-in">Services</p>
   <h2 class="section-title fade-in">두 가지 서비스,<br>하나의 경험.</h2>
-  <div class="service-grid">
-    <div class="service-card fade-in">
-      <div class="service-icon">💳</div>
-      <p class="service-name">MN <span>Pay</span></p>
-      <p class="service-desc">
-        간편하고 안전한 결제 서비스.<br>
-        어디서든, 빠르게.
-      </p>
-      <span class="service-badge">Coming Soon</span>
+
+  <div class="phone-mockup-wrap fade-in">
+    <div class="phone-mockup">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+
+        <!-- 앱 본문 -->
+        <div class="app-body">
+
+          <!-- 내 프로필 -->
+          <div class="app-my-profile">
+            <div class="app-avatar my">
+              <span>나</span>
+            </div>
+            <div class="app-profile-info">
+              <p class="app-profile-name">MINOpark</p>
+              <p class="app-profile-status">상태메시지를 입력해주세요</p>
+            </div>
+          </div>
+
+          <!-- 구분선 -->
+          <div class="app-divider"></div>
+
+          <!-- 즐겨찾는 친구 -->
+          <p class="app-section-label">즐겨찾는 친구 1</p>
+          <div class="app-friend">
+            <div class="app-avatar" style="background:#e8f5e9;">
+              <span style="color:#2e7d32;">A</span>
+            </div>
+            <div class="app-profile-info">
+              <p class="app-profile-name">Alice</p>
+              <p class="app-profile-status">안녕하세요 👋</p>
+            </div>
+          </div>
+
+          <!-- 구분선 -->
+          <div class="app-divider"></div>
+
+          <!-- 친구 -->
+          <p class="app-section-label">친구 2</p>
+          <div class="app-friend">
+            <div class="app-avatar" style="background:#e3f2fd;">
+              <span style="color:#1565c0;">B</span>
+            </div>
+            <div class="app-profile-info">
+              <p class="app-profile-name">Bob</p>
+              <p class="app-profile-status">오늘도 화이팅!</p>
+            </div>
+          </div>
+          <div class="app-friend">
+            <div class="app-avatar" style="background:#fce4ec;">
+              <span style="color:#c62828;">C</span>
+            </div>
+            <div class="app-profile-info">
+              <p class="app-profile-name">Claire</p>
+              <p class="app-profile-status">MN 기대돼요 😊</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 하단 탭바 -->
+        <div class="app-bottom-bar">
+          <!-- 홈 -->
+          <div class="app-tab-item active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+              <path d="M9 21V12h6v9"/>
+            </svg>
+          </div>
+          <!-- 채팅 (라운드 사각형 말풍선) -->
+          <div class="app-tab-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="15" rx="4"/>
+              <path d="M8 21l4-3h0"/>
+            </svg>
+          </div>
+          <!-- Pay (카드) -->
+          <div class="app-tab-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="3"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+          </div>
+          <!-- 오픈채팅 (라운드 사각형 2개 겹침) -->
+          <div class="app-tab-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 뒤 말풍선 (오른쪽 아래) -->
+              <rect x="5" y="6" width="15" height="11" rx="3"/>
+              <path d="M8 17v2l3-2"/>
+              <!-- 앞 말풍선 (왼쪽 위) -->
+              <rect x="2" y="3" width="15" height="11" rx="3" fill="white" stroke-width="2"/>
+              <path d="M5 14v2l3-2"/>
+            </svg>
+          </div>
+          <!-- 더보기 (점 3개) -->
+          <div class="app-tab-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="5" cy="12" r="1.5" fill="#ccc"/>
+              <circle cx="12" cy="12" r="1.5" fill="#ccc"/>
+              <circle cx="19" cy="12" r="1.5" fill="#ccc"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="service-card fade-in">
-      <div class="service-icon">💬</div>
-      <p class="service-name">MN <span>Talk</span></p>
-      <p class="service-desc">
-        결제와 연결된 새로운 소통 방식.<br>
-        더 가깝게, 더 스마트하게.
-      </p>
-      <span class="service-badge">Coming Soon</span>
-    </div>
+    <p class="phone-caption">* 추후 변경될 수 있습니다.</p>
   </div>
 </section>
 
