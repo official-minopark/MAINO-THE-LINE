@@ -762,16 +762,8 @@
     <div class="sns-group fade-in">
       <p class="sns-brand">미노park</p>
       <div class="sns-links">
-        <a href="https://www.youtube.com/@official_minopark?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="sns-item">
-          <span class="sns-name">YouTube</span>
-          <span class="sns-arrow">→</span>
-        </a>
-        <a href="https://www.instagram.com/official_minopark" target="_blank" rel="noopener noreferrer" class="sns-item">
-          <span class="sns-name">Instagram</span>
-          <span class="sns-arrow">→</span>
-        </a>
-        <a href="https://blog.naver.com/official_minopark" target="_blank" rel="noopener noreferrer" class="sns-item">
-          <span class="sns-name">Blog</span>
+        <a class="sns-item auth-required" onclick="goIfLoggedIn('minopark.html')">
+          <span class="sns-name">미노park 페이지로 이동</span>
           <span class="sns-arrow">→</span>
         </a>
       </div>
@@ -780,22 +772,8 @@
     <div class="sns-group fade-in">
       <p class="sns-brand">MAINO</p>
       <div class="sns-links">
-        <a href="https://www.instagram.com/mainomotors" target="_blank" rel="noopener noreferrer" class="sns-item">
-          <span class="sns-name">Instagram</span>
-          <span class="sns-arrow">→</span>
-        </a>
-        <a href="https://blog.naver.com/minopark_maino" target="_blank" rel="noopener noreferrer" class="sns-item">
-          <span class="sns-name">Blog</span>
-          <span class="sns-arrow">→</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="sns-group fade-in">
-      <p class="sns-brand">MAINO : THE LINE</p>
-      <div class="sns-links">
-        <a href="https://www.instagram.com/mainotheline/" target="_blank" rel="noopener noreferrer" class="sns-item">
-          <span class="sns-name">Instagram</span>
+        <a class="sns-item auth-required" onclick="goIfLoggedIn('maino.html')">
+          <span class="sns-name">MAINO 페이지로 이동</span>
           <span class="sns-arrow">→</span>
         </a>
       </div>
@@ -804,9 +782,13 @@
     <div class="sns-group fade-in">
       <p class="sns-brand">문의</p>
       <div class="sns-links">
-        <a class="sns-item" style="cursor:default;">
+        <a href="https://www.instagram.com/mainotheline/" target="_blank" rel="noopener noreferrer" class="sns-item">
+          <span class="sns-name">Instagram</span>
+          <span class="sns-arrow">→</span>
+        </a>
+        <a href="mailto:ytminopark@gmail.com" class="sns-item">
           <span class="sns-name">ytminopark@gmail.com</span>
-          <span class="sns-arrow"></span>
+          <span class="sns-arrow">→</span>
         </a>
       </div>
     </div>
@@ -819,15 +801,15 @@
   <div class="goto-inner">
     <h2 class="goto-title fade-in">Learn more</h2>
     <div class="goto-cards fade-in">
-      <a class="goto-card" onclick="scrollToSection('mino')">
+      <a class="goto-card" href="privacy.html">
         <span class="goto-card-num">01</span>
-        <p class="goto-card-desc"></p>
-        <span class="goto-card-arrow">→</span>
+        <p style="font-size:18px;font-weight:400;color:var(--white);letter-spacing:-0.01em;margin-bottom:6px;">개인정보처리방침</p>
+        <span class="goto-card-arrow">자세히 보기 →</span>
       </a>
       <a class="goto-card" onclick="scrollToSection('shop')">
         <span class="goto-card-num">02</span>
         <p class="goto-card-desc"></p>
-        <span class="goto-card-arrow">→</span>
+        <span class="goto-card-arrow">자세히 보기 →</span>
       </a>
     </div>
   </div>
@@ -922,6 +904,15 @@
   }
   window.addEventListener('scroll', updateBgColor);
   updateBgColor();
+
+  function goIfLoggedIn(url) {
+    const user = auth.currentUser;
+    if (user) {
+      window.location.href = url;
+    } else {
+      window.location.href = 'login.html';
+    }
+  }
 
   function toggleSubDropdown(e) {
     e.stopPropagation();
