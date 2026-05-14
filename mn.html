@@ -13,8 +13,8 @@
       --mint: #00D68F;
       --mint-light: #00F0A0;
       --black: #0D0D0D;
-      --dark: #1A1A1A;
-      --gray: #888888;
+      --dark: #f5f5f3;
+      --gray: #6e6e73;
       --white: #ffffff;
       --nav-height: 80px;
     }
@@ -22,8 +22,8 @@
     body {
       font-family: 'Noto Sans KR', -apple-system, sans-serif;
       font-weight: 300;
-      background: var(--black);
-      color: var(--white);
+      background: var(--white);
+      color: var(--black);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -37,19 +37,19 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 48px;
-      background: rgba(13,13,13,0.85);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(20px);
-      border-bottom: 0.5px solid rgba(255,255,255,0.06);
+      border-bottom: 0.5px solid rgba(0,0,0,0.08);
       z-index: 100;
     }
     .nav-back {
       font-size: 12px;
       letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.35);
+      color: rgba(0,0,0,0.35);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-back:hover { color: var(--white); }
+    .nav-back:hover { color: var(--black); }
     .nav-logo {
       height: 26px;
       width: auto;
@@ -77,7 +77,7 @@
       position: absolute;
       width: 600px; height: 600px;
       border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(0,214,143,0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(0,214,143,0.06) 0%, transparent 70%);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
@@ -106,6 +106,7 @@
       letter-spacing: -0.03em;
       line-height: 1.1;
       margin-bottom: 28px;
+      color: var(--black);
       opacity: 0;
       animation: fadeUp 0.8s ease 0.35s forwards;
     }
@@ -113,7 +114,7 @@
     .hero-sub {
       font-size: 17px;
       font-weight: 300;
-      color: rgba(255,255,255,0.45);
+      color: rgba(0,0,0,0.45);
       line-height: 1.9;
       max-width: 420px;
       margin-bottom: 56px;
@@ -144,8 +145,8 @@
     .btn-primary:hover { background: var(--mint-light); transform: scale(1.03); }
     .btn-ghost {
       background: transparent;
-      color: rgba(255,255,255,0.6);
-      border: 0.5px solid rgba(255,255,255,0.2);
+      color: rgba(0,0,0,0.5);
+      border: 0.5px solid rgba(0,0,0,0.15);
       padding: 16px 36px;
       border-radius: 980px;
       font-size: 14px;
@@ -156,7 +157,7 @@
       transition: border-color 0.2s, color 0.2s;
       text-decoration: none;
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+    .btn-ghost:hover { border-color: rgba(0,0,0,0.4); color: var(--black); }
 
     /* 서비스 섹션 */
     .services {
@@ -177,7 +178,7 @@
       letter-spacing: -0.03em;
       line-height: 1.2;
       margin-bottom: 72px;
-      color: var(--white);
+      color: var(--black);
     }
     .service-grid {
       display: grid;
@@ -188,7 +189,7 @@
       background: var(--dark);
       border-radius: 28px;
       padding: 52px 48px;
-      border: 0.5px solid rgba(255,255,255,0.06);
+      border: 0.5px solid rgba(0,0,0,0.08);
       transition: border-color 0.3s, transform 0.3s;
       position: relative;
       overflow: hidden;
@@ -199,17 +200,17 @@
       top: -40px; right: -40px;
       width: 200px; height: 200px;
       border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(0,214,143,0.07) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(0,214,143,0.05) 0%, transparent 70%);
       pointer-events: none;
     }
     .service-card:hover {
-      border-color: rgba(0,214,143,0.25);
+      border-color: rgba(0,214,143,0.3);
       transform: translateY(-4px);
     }
     .service-icon {
       width: 52px; height: 52px;
       border-radius: 14px;
-      background: rgba(0,214,143,0.12);
+      background: rgba(255,255,255,0.1);
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 32px;
       font-size: 24px;
@@ -219,13 +220,13 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
-      color: var(--white);
+      color: var(--black);
     }
     .service-name span { color: var(--mint); }
     .service-desc {
       font-size: 15px;
       font-weight: 300;
-      color: rgba(255,255,255,0.4);
+      color: rgba(0,0,0,0.45);
       line-height: 1.8;
       letter-spacing: 0.02em;
       margin-bottom: 36px;
@@ -236,8 +237,8 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--mint);
-      background: rgba(0,214,143,0.1);
-      border: 0.5px solid rgba(0,214,143,0.25);
+      background: rgba(255,255,255,0.1);
+      border: 0.5px solid rgba(255,255,255,0.25);
       padding: 6px 16px;
       border-radius: 980px;
     }
@@ -246,9 +247,24 @@
     /* ── 폰 목업 ── */
     .phone-mockup-wrap {
       display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 64px;
+      flex-wrap: wrap;
+    }
+    .phone-mockup-item {
+      display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 64px;
+      gap: 16px;
+    }
+    .phone-mockup-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--gray);
+      text-transform: uppercase;
     }
     .phone-mockup {
       width: 260px;
@@ -263,7 +279,7 @@
         0 0 0 3px #222,
         0 0 0 4px rgba(255,255,255,0.04),
         0 40px 80px rgba(0,0,0,0.7),
-        0 0 60px rgba(0,214,143,0.06);
+        0 0 60px rgba(0,214,143,0.04);
     }
     /* 삼성폰 펀치홀 카메라 */
     .phone-notch {
@@ -302,6 +318,7 @@
       flex-direction: column;
       border-radius: 34px;
       overflow: hidden;
+      isolation: isolate;
     }
     .app-body {
       flex: 1;
@@ -331,7 +348,7 @@
     .app-avatar span {
       font-size: 13px;
       font-weight: 700;
-      color: #00D68F;
+      color: #ffffff;
     }
     .app-profile-info { flex: 1; min-width: 0; }
     .app-profile-name {
@@ -386,24 +403,24 @@
     .phone-caption {
       margin-top: 20px;
       font-size: 11px;
-      color: rgba(255,255,255,0.2);
+      color: rgba(0,0,0,0.25);
       letter-spacing: 0.04em;
     }
 
     /* FOOTER */
     footer {
-      border-top: 0.5px solid rgba(255,255,255,0.06);
+      border-top: 0.5px solid rgba(0,0,0,0.08);
       padding: 40px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #080808;
+      background: var(--dark);
     }
     .footer-logo {
       height: 22px;
       opacity: 0.7;
     }
-    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); }
+    .footer-copy { font-size: 11px; color: rgba(0,0,0,0.35); }
 
     /* FADE IN */
     .fade-in {
@@ -422,20 +439,15 @@
 
 <nav>
   <a href="javascript:history.back()" class="nav-back">← MAINO : THE LINE</a>
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAADHElEQVR4nO3azXHiQBRGUXnCcXaOZLKbdDwrV7kwyBK0ut/POUsWiAJdPqRi2wAAAICM3n488u/v59AjvH/8PAY/RXzfI76mLi587/8MfWIgPNFHMPpbHXaIfjXBM5noVxI8C4gemhH9KlaeRUS/guBZSPSzCZ7FRD+T4AlA9NCM6Gex8gQh+hkETyCiv5rgCUb00Izor2TlCUj0VxE8QYn+CoInMNFDM6IfzcoTnOhHEjwJiH4UwZOE6EcQPImIHpoR/ausPMmI/hWCJyHRP0vwJCV6aEb0z7DyJCb6swRPcqI/Q/AUIHpoRvRHWXmKEP0RgqcQ0f9G8BQj+j2zgn//eJtyHNhEv57gmUz0j/hZT1Giv8fPegoT/S3BU5zoVxA8C4n+uxkrL3gWE/0XN+5oQvTb5jqeVkQ/i+AJQvSu42l2adc7+mYfNjsanQt9o3cdz60m4feNfgbB59MgfNFfRfB5FQ9f9HBP4fBFfwUrX0PR8EU/muAJTvQjCb6egmsv+lEEX1ex8EUPRxQKX/QjWPkeioQv+lcJvpcC4Yv+FYInIdHDWcnXXvTPsvK9JQ5f9M8QPNuWNnzRnyV4vksYvuihGdGfYeW5J9nai/4owbMnUfiiP0LwHJEkfNH/RvCckSB80cNowcMX/R4rT0Gif0TwvCLw2ov+HsEzQtDwRQ9XChi+6G9ZeUYLFr7ovxM8VwkUvui/CL6vZp+96GGWIGsv+m1r903PHbPOgQDhi17wfGkSfu/oBc8qC8PvHT3cmjkEi8LvG72V55Hi4feNHvYUHgXRwyNFb+yJHvYUDF/0EMWk8EUPvyl2Y0/0cESh8EUPRxW5oy96OKNA+KKHZkQPZyVfe9HDMxKHL3p4VtLwRQ+vSBi+6OFVycIXPTQjehgh0dqLHkZJEr7oYaQE4YseRgsevujhCoHDFz00I3q4StC1Fz1cKWD4ooerBQtf9DBDoPBFD7MECV/00IzoYaYAay96mG1x+KKHFRaGL3pYZVH4ooeVFoQvemhG9LDa5LUXPUQwMXzRQxSTwhc9RBLgzzsAAEAa/wFVi+dSi0Dv1AAAAABJRU5ErkJggg==" class="nav-logo nav-logo-mint" alt="MN">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAADCklEQVR4nO3aSXLiUBRFQVz733PVwAOXTWMJ/eY1mUMGQEgcLlJwuwEAAAAZfTx47O+C1+BexOMe8T11Me3Y/xn8xEBwoo9h9Lc6PCX6/QTPUqLfS/AsJ3poRvT7WHm2EP0egmcb0a8neLYS/VqCZzvRQzOiX8fKE4Lo1xA8YYh+PsETiuihGdHPZeUJR/TzCJ6QRD+H4AlL9NCM6Mez8oQm+rEET3iiH0fwpCD6MQRPGqKHZkR/nZUnFdFfI3jSEf37BE9KoodmRP8eK09aoj9P8KQm+nMET3qih2ZEf5yVpwTRHyN4yhD97wRPKaJ/bVXwH4teB0QfgOBZSvTP+VlPSaJ/zM96yhL9PcFTmuj3EDzbiP67FSsveLYS/Rc37mhB9J9cx9OG6NcRPCGI3nU8zS7tukff6mTzUpvPQufoXcfzU4vwO0e/guDzKR++6OcRfF6lwxc9PFY2fNHPYeVrKBm+6McTPKGJfizB11Nu7UU/juDrKhW+6OGYMuGLfgwr30OJ8EV/neB7SR++6K8RPOmIHs5Lvfaif5+V7y1t+KJ/j+C53ZKGL/rzBM//0oUvemhG9OdYeR5JtfaiP07wvJImfNEfI3iOSBG+6H8neM4IH77oYbzQ4Yv+NStPOaJ/TvBcEXbtRf+Y4BkhZPiih7nChS/6e1ae0UKFL/rvBM8sYcIX/RfB99Xq3Ise1gmx9qL/1OqbnodWfQa2hy96wfOlRfjdoxc8u2wLv3v08NPKIdgSfuforTzPlA6/c/TwStlRED08V/LGnujhtXLhix7iWBK+6OF3pW7siR6OKRO+6OG4Enf0RQ/npA9f9NCM6OG81GsvenhP2vBFD+9LGb7o4Zp04YserksVvuihGdHDGGnWXvQwTorwRQ9jhQ9f9DBe6PBFD3OEDV/00IzoYZ6Qay96mCtc+KKH+UKFL3pYI0z4ood1QoQvemhG9LDW9rUXPay3NXzRwx7bwhc97LMlfNHDXsvDFz00I3rYb+naix5iWBa+6CGOJeGLHmLZ/ucdAAAgjX9OUE3tbN0weQAAAABJRU5ErkJggg==" class="nav-logo nav-logo-mint" alt="MN">
 </nav>
 
 <section class="hero">
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAADHElEQVR4nO3azXHiQBRGUXnCcXaOZLKbdDwrV7kwyBK0ut/POUsWiAJdPqRi2wAAAICM3n488u/v59AjvH/8PAY/RXzfI76mLi587/8MfWIgPNFHMPpbHXaIfjXBM5noVxI8C4gemhH9KlaeRUS/guBZSPSzCZ7FRD+T4AlA9NCM6Gex8gQh+hkETyCiv5rgCUb00Izor2TlCUj0VxE8QYn+CoInMNFDM6IfzcoTnOhHEjwJiH4UwZOE6EcQPImIHpoR/ausPMmI/hWCJyHRP0vwJCV6aEb0z7DyJCb6swRPcqI/Q/AUIHpoRvRHWXmKEP0RgqcQ0f9G8BQj+j2zgn//eJtyHNhEv57gmUz0j/hZT1Giv8fPegoT/S3BU5zoVxA8C4n+uxkrL3gWE/0XN+5oQvTb5jqeVkQ/i+AJQvSu42l2adc7+mYfNjsanQt9o3cdz60m4feNfgbB59MgfNFfRfB5FQ9f9HBP4fBFfwUrX0PR8EU/muAJTvQjCb6egmsv+lEEX1ex8EUPRxQKX/QjWPkeioQv+lcJvpcC4Yv+FYInIdHDWcnXXvTPsvK9JQ5f9M8QPNuWNnzRnyV4vksYvuihGdGfYeW5J9nai/4owbMnUfiiP0LwHJEkfNH/RvCckSB80cNowcMX/R4rT0Gif0TwvCLw2ov+HsEzQtDwRQ9XChi+6G9ZeUYLFr7ovxM8VwkUvui/CL6vZp+96GGWIGsv+m1r903PHbPOgQDhi17wfGkSfu/oBc8qC8PvHT3cmjkEi8LvG72V55Hi4feNHvYUHgXRwyNFb+yJHvYUDF/0EMWk8EUPvyl2Y0/0cESh8EUPRxW5oy96OKNA+KKHZkQPZyVfe9HDMxKHL3p4VtLwRQ+vSBi+6OFVycIXPTQjehgh0dqLHkZJEr7oYaQE4YseRgsevujhCoHDFz00I3q4StC1Fz1cKWD4ooerBQtf9DBDoPBFD7MECV/00IzoYaYAay96mG1x+KKHFRaGL3pYZVH4ooeVFoQvemhG9LDa5LUXPUQwMXzRQxSTwhc9RBLgzzsAAEAa/wFVi+dSi0Dv1AAAAABJRU5ErkJggg==" class="hero-logo" alt="MN">
-  <p class="hero-tag">MN Financial</p>
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAADCklEQVR4nO3aSXLiUBRFQVz733PVwAOXTWMJ/eY1mUMGQEgcLlJwuwEAAAAZfTx47O+C1+BexOMe8T11Me3Y/xn8xEBwoo9h9Lc6PCX6/QTPUqLfS/AsJ3poRvT7WHm2EP0egmcb0a8neLYS/VqCZzvRQzOiX8fKE4Lo1xA8YYh+PsETiuihGdHPZeUJR/TzCJ6QRD+H4AlL9NCM6Mez8oQm+rEET3iiH0fwpCD6MQRPGqKHZkR/nZUnFdFfI3jSEf37BE9KoodmRP8eK09aoj9P8KQm+nMET3qih2ZEf5yVpwTRHyN4yhD97wRPKaJ/bVXwH4teB0QfgOBZSvTP+VlPSaJ/zM96yhL9PcFTmuj3EDzbiP67FSsveLYS/Rc37mhB9J9cx9OG6NcRPCGI3nU8zS7tukff6mTzUpvPQufoXcfzU4vwO0e/guDzKR++6OcRfF6lwxc9PFY2fNHPYeVrKBm+6McTPKGJfizB11Nu7UU/juDrKhW+6OGYMuGLfgwr30OJ8EV/neB7SR++6K8RPOmIHs5Lvfaif5+V7y1t+KJ/j+C53ZKGL/rzBM//0oUvemhG9OdYeR5JtfaiP07wvJImfNEfI3iOSBG+6H8neM4IH77oYbzQ4Yv+NStPOaJ/TvBcEXbtRf+Y4BkhZPiih7nChS/6e1ae0UKFL/rvBM8sYcIX/RfB99Xq3Ise1gmx9qL/1OqbnodWfQa2hy96wfOlRfjdoxc8u2wLv3v08NPKIdgSfuforTzPlA6/c/TwStlRED08V/LGnujhtXLhix7iWBK+6OF3pW7siR6OKRO+6OG4Enf0RQ/npA9f9NCM6OG81GsvenhP2vBFD+9LGb7o4Zp04YserksVvuihGdHDGGnWXvQwTorwRQ9jhQ9f9DBe6PBFD3OEDV/00IzoYZ6Qay96mCtc+KKH+UKFL3pYI0z4ood1QoQvemhG9LDW9rUXPay3NXzRwx7bwhc97LMlfNHDXsvDFz00I3rYb+naix5iWBa+6CGOJeGLHmLZ/ucdAAAgjX9OUE3tbN0weQAAAABJRU5ErkJggg==" class="hero-logo" alt="MN">
   <h1 class="hero-title">
-    돈과 대화가<br>
+    대화와 결제가<br>
     <span class="mint">더 쉬워지는 곳.</span>
   </h1>
-  <p class="hero-sub">
-    MN으로<br>
-    결제와 소통을 하나로 연결합니다.
-  </p>
   <div class="hero-btns">
     <a href="#services" class="btn-primary">서비스 알아보기</a>
     <a href="javascript:void(0)" class="btn-ghost">준비 중</a>
@@ -447,108 +459,223 @@
   <h2 class="section-title fade-in">두 가지 서비스,<br>하나의 경험.</h2>
 
   <div class="phone-mockup-wrap fade-in">
-    <div class="phone-mockup">
-      <div class="phone-notch"></div>
-      <div class="phone-screen">
 
-        <!-- 앱 본문 -->
-        <div class="app-body">
+    <!-- 홈 화면 -->
+    <div class="phone-mockup-item">
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="app-body">
 
-          <!-- 내 프로필 -->
-          <div class="app-my-profile">
-            <div class="app-avatar my">
-              <span>나</span>
+            <!-- 내 프로필 + 설정 아이콘 -->
+            <div class="app-my-profile">
+              <div class="app-avatar my"><span>M</span></div>
+              <div class="app-profile-info">
+                <p class="app-profile-name">MINOpark</p>
+                <p class="app-profile-status">상태메시지를 입력해주세요</p>
+              </div>
+              <!-- 설정 아이콘 -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
             </div>
-            <div class="app-profile-info">
-              <p class="app-profile-name">MINOpark</p>
-              <p class="app-profile-status">상태메시지를 입력해주세요</p>
+
+            <div class="app-divider"></div>
+
+            <p class="app-section-label">즐겨찾는 친구 1</p>
+            <div class="app-friend">
+              <div class="app-avatar" style="background:#e8f5e9;">
+                <span style="color:#2e7d32;">A</span>
+              </div>
+              <div class="app-profile-info">
+                <p class="app-profile-name">Alice</p>
+                <p class="app-profile-status">안녕하세요 👋</p>
+              </div>
             </div>
+
+            <div class="app-divider"></div>
+
+            <p class="app-section-label">친구 2</p>
+            <div class="app-friend">
+              <div class="app-avatar" style="background:#e3f2fd;">
+                <span style="color:#1565c0;">B</span>
+              </div>
+              <div class="app-profile-info">
+                <p class="app-profile-name">Bob</p>
+                <p class="app-profile-status">오늘도 화이팅!</p>
+              </div>
+            </div>
+            <div class="app-friend">
+              <div class="app-avatar" style="background:#fce4ec;">
+                <span style="color:#c62828;">C</span>
+              </div>
+              <div class="app-profile-info">
+                <p class="app-profile-name">Claire</p>
+                <p class="app-profile-status">MN 기대돼요 😊</p>
+              </div>
+            </div>
+
           </div>
 
-          <!-- 구분선 -->
-          <div class="app-divider"></div>
-
-          <!-- 즐겨찾는 친구 -->
-          <p class="app-section-label">즐겨찾는 친구 1</p>
-          <div class="app-friend">
-            <div class="app-avatar" style="background:#e8f5e9;">
-              <span style="color:#2e7d32;">A</span>
+          <!-- 하단 탭바 -->
+          <div class="app-bottom-bar">
+            <div class="app-tab-item active">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+                <path d="M9 21V12h6v9"/>
+              </svg>
             </div>
-            <div class="app-profile-info">
-              <p class="app-profile-name">Alice</p>
-              <p class="app-profile-status">안녕하세요 👋</p>
+            <div class="app-tab-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="6" width="15" height="11" rx="3"/>
+                <path d="M8 17v2l3-2"/>
+                <rect x="2" y="3" width="15" height="11" rx="3" fill="white" stroke-width="2"/>
+                <path d="M5 14v2l3-2"/>
+              </svg>
             </div>
-          </div>
-
-          <!-- 구분선 -->
-          <div class="app-divider"></div>
-
-          <!-- 친구 -->
-          <p class="app-section-label">친구 2</p>
-          <div class="app-friend">
-            <div class="app-avatar" style="background:#e3f2fd;">
-              <span style="color:#1565c0;">B</span>
+            <div class="app-tab-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="3"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
             </div>
-            <div class="app-profile-info">
-              <p class="app-profile-name">Bob</p>
-              <p class="app-profile-status">오늘도 화이팅!</p>
+            <div class="app-tab-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="5" cy="12" r="1.5" fill="#ccc"/>
+                <circle cx="12" cy="12" r="1.5" fill="#ccc"/>
+                <circle cx="19" cy="12" r="1.5" fill="#ccc"/>
+              </svg>
             </div>
-          </div>
-          <div class="app-friend">
-            <div class="app-avatar" style="background:#fce4ec;">
-              <span style="color:#c62828;">C</span>
-            </div>
-            <div class="app-profile-info">
-              <p class="app-profile-name">Claire</p>
-              <p class="app-profile-status">MN 기대돼요 😊</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- 하단 탭바 -->
-        <div class="app-bottom-bar">
-          <!-- 홈 -->
-          <div class="app-tab-item active">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
-              <path d="M9 21V12h6v9"/>
-            </svg>
-          </div>
-          <!-- 오픈채팅 -->
-          <div class="app-tab-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="5" y="6" width="15" height="11" rx="3"/>
-              <path d="M8 17v2l3-2"/>
-              <rect x="2" y="3" width="15" height="11" rx="3" fill="white" stroke-width="2"/>
-              <path d="M5 14v2l3-2"/>
-            </svg>
-          </div>
-          <!-- Pay (카드) -->
-          <div class="app-tab-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="5" width="20" height="14" rx="3"/>
-              <line x1="2" y1="10" x2="22" y2="10"/>
-            </svg>
-          </div>
-          <!-- 더보기 -->
-          <div class="app-tab-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="5" cy="12" r="1.5" fill="#ccc"/>
-              <circle cx="12" cy="12" r="1.5" fill="#ccc"/>
-              <circle cx="19" cy="12" r="1.5" fill="#ccc"/>
-            </svg>
           </div>
         </div>
-
       </div>
     </div>
-    <p class="phone-caption">* 추후 변경될 수 있습니다.</p>
+
+    <!-- Pay 화면 -->
+    <div class="phone-mockup-item">
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="app-body" style="background:#f8f8f8;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#e0e0e0 transparent;padding-top:0;">
+
+            <!-- Pay 상단바 -->
+            <div style="position:sticky;top:0;background:#ffffff;border-bottom:0.5px solid #f0f0f0;padding:10px 14px;margin:0 -14px 16px;display:flex;align-items:center;gap:4px;z-index:10;">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAADCklEQVR4nO3aSXLiUBRFQVz733PVwAOXTWMJ/eY1mUMGQEgcLlJwuwEAAAAZfTx47O+C1+BexOMe8T11Me3Y/xn8xEBwoo9h9Lc6PCX6/QTPUqLfS/AsJ3poRvT7WHm2EP0egmcb0a8neLYS/VqCZzvRQzOiX8fKE4Lo1xA8YYh+PsETiuihGdHPZeUJR/TzCJ6QRD+H4AlL9NCM6Mez8oQm+rEET3iiH0fwpCD6MQRPGqKHZkR/nZUnFdFfI3jSEf37BE9KoodmRP8eK09aoj9P8KQm+nMET3qih2ZEf5yVpwTRHyN4yhD97wRPKaJ/bVXwH4teB0QfgOBZSvTP+VlPSaJ/zM96yhL9PcFTmuj3EDzbiP67FSsveLYS/Rc37mhB9J9cx9OG6NcRPCGI3nU8zS7tukff6mTzUpvPQufoXcfzU4vwO0e/guDzKR++6OcRfF6lwxc9PFY2fNHPYeVrKBm+6McTPKGJfizB11Nu7UU/juDrKhW+6OGYMuGLfgwr30OJ8EV/neB7SR++6K8RPOmIHs5Lvfaif5+V7y1t+KJ/j+C53ZKGL/rzBM//0oUvemhG9OdYeR5JtfaiP07wvJImfNEfI3iOSBG+6H8neM4IH77oYbzQ4Yv+NStPOaJ/TvBcEXbtRf+Y4BkhZPiih7nChS/6e1ae0UKFL/rvBM8sYcIX/RfB99Xq3Ise1gmx9qL/1OqbnodWfQa2hy96wfOlRfjdoxc8u2wLv3v08NPKIdgSfuforTzPlA6/c/TwStlRED08V/LGnujhtXLhix7iWBK+6OF3pW7siR6OKRO+6OG4Enf0RQ/npA9f9NCM6OG81GsvenhP2vBFD+9LGb7o4Zp04YserksVvuihGdHDGGnWXvQwTorwRQ9jhQ9f9DBe6PBFD3OEDV/00IzoYZ6Qay96mCtc+KKH+UKFL3pYI0z4ood1QoQvemhG9LDW9rUXPay3NXzRwx7bwhc97LMlfNHDXsvDFz00I3rYb+naix5iWBa+6CGOJeGLHmLZ/ucdAAAgjX9OUE3tbN0weQAAAABJRU5ErkJggg==" style="height:12px;width:auto;object-fit:contain;">
+              <p style="font-size:13px;font-weight:700;color:#0D0D0D;letter-spacing:-0.02em;">Pay</p>
+            </div>
+
+            <!-- 잔액 -->
+            <div style="background:#fff;border-radius:14px;padding:16px 14px;margin-bottom:10px;">
+              <p style="font-size:9px;color:#bbb;margin-bottom:6px;letter-spacing:0.04em;">잔액</p>
+              <p style="font-size:20px;font-weight:700;color:#0D0D0D;margin-bottom:14px;">₩ 218,000</p>
+              <div style="display:flex;gap:8px;">
+                <div style="flex:1;background:#f5f5f5;border-radius:8px;padding:8px;text-align:center;font-size:10px;color:#555;font-weight:500;">충전</div>
+                <div style="flex:1;background:#00D68F;border-radius:8px;padding:8px;text-align:center;font-size:10px;color:#0D0D0D;font-weight:500;">송금</div>
+              </div>
+            </div>
+
+            <!-- 이번 달 결제 -->
+            <div style="background:#fff;border-radius:14px;padding:14px;margin-bottom:10px;">
+              <p style="font-size:9px;color:#bbb;margin-bottom:6px;letter-spacing:0.04em;">이번 달 결제</p>
+              <p style="font-size:15px;font-weight:700;color:#0D0D0D;margin-bottom:12px;">₩ 279,500</p>
+              <div style="border-top:1px solid #f0f0f0;padding-top:10px;display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <p style="font-size:10px;color:#555;">R사 게이밍 헤드셋</p>
+                  <p style="font-size:10px;font-weight:600;color:#0D0D0D;">₩ 239,000</p>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <p style="font-size:10px;color:#555;">MN Ultra</p>
+                  <p style="font-size:10px;font-weight:600;color:#0D0D0D;">₩ 9,900</p>
+                </div>
+                <div style="border-top:1px solid #f0f0f0;margin-top:6px;padding-top:5px;text-align:center;">
+                  <p style="font-size:9px;color:#0D0D0D;font-weight:500;">더보기</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 주식 즐겨찾기 -->
+            <div style="background:#fff;border-radius:14px;padding:14px;">
+              <!-- 헤더 -->
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <div style="display:flex;align-items:center;gap:4px;">
+                  <span style="font-size:8px;background:#e8f5e9;color:#2e7d32;padding:1px 5px;border-radius:4px;font-weight:600;">실시간</span>
+                  <p style="font-size:9px;color:#bbb;">2026.05.14 (장마감)</p>
+                </div>
+                <p style="font-size:9px;color:#00D68F;font-weight:600;">+ 종목 추가</p>
+              </div>
+              <!-- 종목 목록 (스크롤 가능) -->
+              <div>
+                <!-- S전자 -->
+                <div style="padding:7px 0;border-bottom:1px solid #f5f5f5;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <p style="font-size:10px;font-weight:600;color:#0D0D0D;">S전자</p>
+                    <p style="font-size:10px;font-weight:700;color:#0D0D0D;">296,000원</p>
+                  </div>
+                  <div style="display:flex;justify-content:flex-end;margin-top:2px;">
+                    <p style="font-size:9px;color:#e53935;">▲ 12,000원 (+4.23%)</p>
+                  </div>
+                </div>
+                <!-- SK하이닉스 -->
+                <div style="padding:7px 0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <p style="font-size:10px;font-weight:600;color:#0D0D0D;">S반도체</p>
+                    <p style="font-size:10px;font-weight:700;color:#0D0D0D;">1,970,000원</p>
+                  </div>
+                  <div style="display:flex;justify-content:flex-end;margin-top:2px;">
+                    <p style="font-size:9px;color:#1565c0;">▼ 6,000원 (-0.30%)</p>
+                  </div>
+                </div>
+
+              </div>
+              <!-- 더보기 -->
+              <div style="border-top:1px solid #f0f0f0;margin-top:6px;padding-top:6px;text-align:center;">
+                <p style="font-size:9px;color:#0D0D0D;font-weight:500;">더보기</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 하단 탭바 -->
+          <div class="app-bottom-bar">
+            <div class="app-tab-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+                <path d="M9 21V12h6v9"/>
+              </svg>
+            </div>
+            <div class="app-tab-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="6" width="15" height="11" rx="3"/>
+                <path d="M8 17v2l3-2"/>
+                <rect x="2" y="3" width="15" height="11" rx="3" fill="white" stroke-width="2"/>
+                <path d="M5 14v2l3-2"/>
+              </svg>
+            </div>
+            <div class="app-tab-item active">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="3"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+            </div>
+            <div class="app-tab-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="5" cy="12" r="1.5" fill="#ccc"/>
+                <circle cx="12" cy="12" r="1.5" fill="#ccc"/>
+                <circle cx="19" cy="12" r="1.5" fill="#ccc"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+  <p class="phone-caption" style="text-align:center;margin-top:24px;">* 추후 변경될 수 있습니다.</p>
 </section>
 
 <footer>
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAADHElEQVR4nO3azXHiQBRGUXnCcXaOZLKbdDwrV7kwyBK0ut/POUsWiAJdPqRi2wAAAICM3n488u/v59AjvH/8PAY/RXzfI76mLi587/8MfWIgPNFHMPpbHXaIfjXBM5noVxI8C4gemhH9KlaeRUS/guBZSPSzCZ7FRD+T4AlA9NCM6Gex8gQh+hkETyCiv5rgCUb00Izor2TlCUj0VxE8QYn+CoInMNFDM6IfzcoTnOhHEjwJiH4UwZOE6EcQPImIHpoR/ausPMmI/hWCJyHRP0vwJCV6aEb0z7DyJCb6swRPcqI/Q/AUIHpoRvRHWXmKEP0RgqcQ0f9G8BQj+j2zgn//eJtyHNhEv57gmUz0j/hZT1Giv8fPegoT/S3BU5zoVxA8C4n+uxkrL3gWE/0XN+5oQvTb5jqeVkQ/i+AJQvSu42l2adc7+mYfNjsanQt9o3cdz60m4feNfgbB59MgfNFfRfB5FQ9f9HBP4fBFfwUrX0PR8EU/muAJTvQjCb6egmsv+lEEX1ex8EUPRxQKX/QjWPkeioQv+lcJvpcC4Yv+FYInIdHDWcnXXvTPsvK9JQ5f9M8QPNuWNnzRnyV4vksYvuihGdGfYeW5J9nai/4owbMnUfiiP0LwHJEkfNH/RvCckSB80cNowcMX/R4rT0Gif0TwvCLw2ov+HsEzQtDwRQ9XChi+6G9ZeUYLFr7ovxM8VwkUvui/CL6vZp+96GGWIGsv+m1r903PHbPOgQDhi17wfGkSfu/oBc8qC8PvHT3cmjkEi8LvG72V55Hi4feNHvYUHgXRwyNFb+yJHvYUDF/0EMWk8EUPvyl2Y0/0cESh8EUPRxW5oy96OKNA+KKHZkQPZyVfe9HDMxKHL3p4VtLwRQ+vSBi+6OFVycIXPTQjehgh0dqLHkZJEr7oYaQE4YseRgsevujhCoHDFz00I3q4StC1Fz1cKWD4ooerBQtf9DBDoPBFD7MECV/00IzoYaYAay96mG1x+KKHFRaGL3pYZVH4ooeVFoQvemhG9LDa5LUXPUQwMXzRQxSTwhc9RBLgzzsAAEAa/wFVi+dSi0Dv1AAAAABJRU5ErkJggg==" class="footer-logo" alt="MN">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAADCklEQVR4nO3aSXLiUBRFQVz733PVwAOXTWMJ/eY1mUMGQEgcLlJwuwEAAAAZfTx47O+C1+BexOMe8T11Me3Y/xn8xEBwoo9h9Lc6PCX6/QTPUqLfS/AsJ3poRvT7WHm2EP0egmcb0a8neLYS/VqCZzvRQzOiX8fKE4Lo1xA8YYh+PsETiuihGdHPZeUJR/TzCJ6QRD+H4AlL9NCM6Mez8oQm+rEET3iiH0fwpCD6MQRPGqKHZkR/nZUnFdFfI3jSEf37BE9KoodmRP8eK09aoj9P8KQm+nMET3qih2ZEf5yVpwTRHyN4yhD97wRPKaJ/bVXwH4teB0QfgOBZSvTP+VlPSaJ/zM96yhL9PcFTmuj3EDzbiP67FSsveLYS/Rc37mhB9J9cx9OG6NcRPCGI3nU8zS7tukff6mTzUpvPQufoXcfzU4vwO0e/guDzKR++6OcRfF6lwxc9PFY2fNHPYeVrKBm+6McTPKGJfizB11Nu7UU/juDrKhW+6OGYMuGLfgwr30OJ8EV/neB7SR++6K8RPOmIHs5Lvfaif5+V7y1t+KJ/j+C53ZKGL/rzBM//0oUvemhG9OdYeR5JtfaiP07wvJImfNEfI3iOSBG+6H8neM4IH77oYbzQ4Yv+NStPOaJ/TvBcEXbtRf+Y4BkhZPiih7nChS/6e1ae0UKFL/rvBM8sYcIX/RfB99Xq3Ise1gmx9qL/1OqbnodWfQa2hy96wfOlRfjdoxc8u2wLv3v08NPKIdgSfuforTzPlA6/c/TwStlRED08V/LGnujhtXLhix7iWBK+6OF3pW7siR6OKRO+6OG4Enf0RQ/npA9f9NCM6OG81GsvenhP2vBFD+9LGb7o4Zp04YserksVvuihGdHDGGnWXvQwTorwRQ9jhQ9f9DBe6PBFD3OEDV/00IzoYZ6Qay96mCtc+KKH+UKFL3pYI0z4ood1QoQvemhG9LDW9rUXPay3NXzRwx7bwhc97LMlfNHDXsvDFz00I3rYb+naix5iWBa+6CGOJeGLHmLZ/ucdAAAgjX9OUE3tbN0weQAAAABJRU5ErkJggg==" class="footer-logo" alt="MN">
   <span class="footer-copy">© 2026 미노park. All rights reserved.</span>
 </footer>
 
