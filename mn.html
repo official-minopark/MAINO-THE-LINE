@@ -673,6 +673,95 @@
   <p class="phone-caption" style="text-align:center;margin-top:24px;">* 추후 변경될 수 있습니다.</p>
 </section>
 
+  <!-- 요금제 섹션 -->
+  <style>
+    .pricing-card {
+      background: #ffffff;
+      border: 0.5px solid rgba(0,0,0,0.1);
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .pricing-card:hover {
+      border-color: #00D68F;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,214,143,0.12);
+    }
+    .pricing-card.featured {
+      border: 2px solid #00D68F;
+      position: relative;
+    }
+    .pricing-card.featured:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,214,143,0.2);
+    }
+  </style>
+  <section id="pricing" style="padding:120px 48px;background:var(--white);">
+    <div style="max-width:1000px;margin:0 auto;">
+      <p style="font-size:11px;letter-spacing:0.2em;color:var(--gray);text-transform:uppercase;margin-bottom:16px;">Pricing</p>
+      <h2 style="font-size:clamp(28px,5vw,42px);font-weight:400;letter-spacing:-0.02em;color:var(--black);margin-bottom:56px;">요금제</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;">
+
+        <!-- Free -->
+        <div class="pricing-card" onclick="window.open('https://www.youtube.com/@official_minopark','_blank')">
+          <p style="font-size:12px;color:var(--gray);margin:0 0 8px;letter-spacing:0.04em;">Free</p>
+          <p style="font-size:26px;font-weight:400;color:var(--black);margin:0 0 4px;letter-spacing:-0.02em;">₩0</p>
+          <p style="font-size:12px;color:var(--gray);margin:0 0 20px;">/월</p>
+          <div style="border-top:0.5px solid rgba(0,0,0,0.08);padding-top:16px;display:flex;flex-direction:column;gap:9px;">
+            <p style="font-size:12px;margin:0;color:var(--black);">방 1개 / 10명</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">화질 720p</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">기본 이모티콘</p>
+          </div>
+        </div>
+
+        <!-- 미노park Fan -->
+        <div class="pricing-card" onclick="window.open('https://www.youtube.com/@official_minopark','_blank')">
+          <p style="font-size:12px;color:var(--gray);margin:0 0 8px;letter-spacing:0.04em;">미노park Fan</p>
+          <p style="font-size:26px;font-weight:400;color:var(--black);margin:0 0 4px;letter-spacing:-0.02em;">₩990</p>
+          <p style="font-size:12px;color:var(--gray);margin:0 0 20px;">/월</p>
+          <div style="border-top:0.5px solid rgba(0,0,0,0.08);padding-top:16px;display:flex;flex-direction:column;gap:9px;">
+            <p style="font-size:12px;margin:0;color:var(--black);">Free 혜택 포함</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">전용 영상</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">미노park 이모티콘</p>
+          </div>
+        </div>
+
+        <!-- MN Plus -->
+        <div class="pricing-card featured" onclick="window.open('https://www.youtube.com/@official_minopark','_blank')">
+          <span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#00D68F;color:#0a3d2e;font-size:11px;font-weight:500;padding:3px 12px;border-radius:20px;white-space:nowrap;letter-spacing:0.04em;">인기</span>
+          <p style="font-size:12px;color:var(--gray);margin:0 0 8px;letter-spacing:0.04em;">MN Plus</p>
+          <p style="font-size:26px;font-weight:400;color:var(--black);margin:0 0 4px;letter-spacing:-0.02em;">₩5,900</p>
+          <p style="font-size:12px;color:var(--gray);margin:0 0 20px;">/월</p>
+          <div style="border-top:0.5px solid rgba(0,0,0,0.08);padding-top:16px;display:flex;flex-direction:column;gap:9px;">
+            <p style="font-size:12px;margin:0;color:var(--black);">미노park Fan 혜택 포함</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">방 2개 / 30명</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">화질 720p</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">Plus 이모티콘 / 뱃지</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">수수료 50% 할인</p>
+          </div>
+        </div>
+
+        <!-- MN Ultra -->
+        <div class="pricing-card" onclick="window.open('https://www.youtube.com/@official_minopark','_blank')">
+          <p style="font-size:12px;color:var(--gray);margin:0 0 8px;letter-spacing:0.04em;">MN Ultra</p>
+          <p style="font-size:26px;font-weight:400;color:var(--black);margin:0 0 4px;letter-spacing:-0.02em;">₩9,900</p>
+          <p style="font-size:12px;color:var(--gray);margin:0 0 20px;">/월</p>
+          <div style="border-top:0.5px solid rgba(0,0,0,0.08);padding-top:16px;display:flex;flex-direction:column;gap:9px;">
+            <p style="font-size:12px;margin:0;color:var(--black);">MN Plus 혜택 포함</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">방 5개 / 50명</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">화질 1080p</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">Ultra 이모티콘 / 뱃지</p>
+            <p style="font-size:12px;margin:0;color:var(--black);">수수료 무료</p>
+            <p style="font-size:12px;margin:0;color:#00D68F;font-weight:500;">굿즈 할인</p>
+          </div>
+        </div>
+
+      </div>
+      <p style="font-size:12px;color:var(--gray);margin-top:24px;text-align:center;">* 추후 변경될 수 있습니다.</p>
+    </div>
+  </section>
+
 <footer>
   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAB+CAYAAADvEReKAAADCklEQVR4nO3aSXLiUBRFQVz733PVwAOXTWMJ/eY1mUMGQEgcLlJwuwEAAAAZfTx47O+C1+BexOMe8T11Me3Y/xn8xEBwoo9h9Lc6PCX6/QTPUqLfS/AsJ3poRvT7WHm2EP0egmcb0a8neLYS/VqCZzvRQzOiX8fKE4Lo1xA8YYh+PsETiuihGdHPZeUJR/TzCJ6QRD+H4AlL9NCM6Mez8oQm+rEET3iiH0fwpCD6MQRPGqKHZkR/nZUnFdFfI3jSEf37BE9KoodmRP8eK09aoj9P8KQm+nMET3qih2ZEf5yVpwTRHyN4yhD97wRPKaJ/bVXwH4teB0QfgOBZSvTP+VlPSaJ/zM96yhL9PcFTmuj3EDzbiP67FSsveLYS/Rc37mhB9J9cx9OG6NcRPCGI3nU8zS7tukff6mTzUpvPQufoXcfzU4vwO0e/guDzKR++6OcRfF6lwxc9PFY2fNHPYeVrKBm+6McTPKGJfizB11Nu7UU/juDrKhW+6OGYMuGLfgwr30OJ8EV/neB7SR++6K8RPOmIHs5Lvfaif5+V7y1t+KJ/j+C53ZKGL/rzBM//0oUvemhG9OdYeR5JtfaiP07wvJImfNEfI3iOSBG+6H8neM4IH77oYbzQ4Yv+NStPOaJ/TvBcEXbtRf+Y4BkhZPiih7nChS/6e1ae0UKFL/rvBM8sYcIX/RfB99Xq3Ise1gmx9qL/1OqbnodWfQa2hy96wfOlRfjdoxc8u2wLv3v08NPKIdgSfuforTzPlA6/c/TwStlRED08V/LGnujhtXLhix7iWBK+6OF3pW7siR6OKRO+6OG4Enf0RQ/npA9f9NCM6OG81GsvenhP2vBFD+9LGb7o4Zp04YserksVvuihGdHDGGnWXvQwTorwRQ9jhQ9f9DBe6PBFD3OEDV/00IzoYZ6Qay96mCtc+KKH+UKFL3pYI0z4ood1QoQvemhG9LDW9rUXPay3NXzRwx7bwhc97LMlfNHDXsvDFz00I3rYb+naix5iWBa+6CGOJeGLHmLZ/ucdAAAgjX9OUE3tbN0weQAAAABJRU5ErkJggg==" class="footer-logo" alt="MN">
   <span class="footer-copy">© 2026 미노park. All rights reserved.</span>
